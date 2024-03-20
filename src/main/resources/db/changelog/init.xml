@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog logicalFilePath="db.changelog-1.0.xml" xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <changeSet author="anupam.krishna" id="create-table">
+        <sql splitStatements="false">
+            CREATE TABLE users (
+                                   user_id SERIAL PRIMARY KEY,
+                                   username VARCHAR(50) NOT NULL UNIQUE,
+                                   password VARCHAR(255) NOT NULL,
+                                   email VARCHAR(100) NOT NULL UNIQUE
+            );
+
+            CREATE TABLE study_spaces (
+                                          space_id SERIAL PRIMARY KEY,
+                                          space_name VARCHAR(100) NOT NULL,
+                                          capacity INT NOT NULL,
+                                          location VARCHAR(255) NOT NULL,
+                                          availability JSONB
+            );
+        </sql>
+    </changeSet>
+    <changeSet id="insert_data" author="anupam.krishna">
+        <sql splitStatements="false">
+
+            INSERT INTO users (username, password, email) VALUES
+            ('john_doe', 'hashed_password', 'john.doe@email.com'),
+            ('jane_smith', 'hashed_password', 'jane.smith@email.com');
+
+            INSERT INTO study_spaces (space_name, capacity, location, availability)
+            VALUES
+                ('Quiet Room 1', 10, 'Library A', '{"Monday": ["09:00-12:00", "14:00-17:00"], "Tuesday": ["10:00-14:00"]}'::jsonb),
+                ('Collaboration Space 2', 15, 'Library B', '{"Wednesday": ["13:00-17:00"], "Thursday": ["11:00-15:00"]}'::jsonb);
+
+
+        </sql>
+    </changeSet>
+</databaseChangeLog>

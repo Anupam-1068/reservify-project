@@ -1,0 +1,10 @@
+services:
+  postgres:
+    image: 'postgres:15'
+    container_name: reservify
+    environment:
+      - 'POSTGRES_DB=reservify'
+      - 'POSTGRES_PASSWORD=reservify'
+      - 'POSTGRES_USER=reservify'
+    ports:
+      - '5432:5432'
