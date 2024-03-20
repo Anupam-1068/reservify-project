@@ -1,0 +1,27 @@
+/* PlaceCarousel.css */
+
+.carousel {
+    width: 100%;
+    margin-top: 20px; /* Adjust as needed */
+  }
+  
+  .carousel-item img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .carousel-caption {
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+    color: white;
+    text-align: center;
+  }
+  
+  .carousel-caption h3 {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .carousel-caption p {
+    font-size: 16px;
+  }
+  

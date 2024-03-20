@@ -1,0 +1,36 @@
+.navbar.navbar-light {
+    height: 50px;
+    display: flex; /* Use Flexbox */
+    align-items: center; /* Align items vertically in the center */
+    margin-right: 15px; /* Add margin between tabs */
+  }
+  
+  .logo {
+    width: 50px; /* Adjust the width as needed */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 10px; /* Adjust margin as needed */
+  }
+  
+  .navbar {
+    background-color: #f7fff0;
+  }
+  
+  .nav-link{
+    display: flex; /* Use Flexbox */
+    align-items: center; /* Align items vertically in the center */
+    margin-right: 15px; /* Add margin between tabs */
+  }
+  .nav-item {
+    display: flex; /* Use Flexbox */
+    align-items: center; /* Align items vertically in the center */
+    margin-right: 15px; /* Add margin between tabs */
+  }
+  
+  .nav-link.active {
+    color: #333; /* Color of active tab label */
+  }
+  
+  .navbar-brand {
+    font-weight: bold;
+  }
+  

@@ -1,0 +1,30 @@
+
+body {
+    background-color: #ECE8CD; /* Set the background color of the whole page */
+}
+
+.blurryImageContainer {
+    width: 100%; /* Set the desired width */
+    height: 200px; /* Set the desired height */
+    overflow: hidden; /* Hide the overflow to clip the blurry edges */
+}
+
+.bottom-left {
+    position: absolute;
+    bottom: 160px;
+    left: 16px;
+    font-size: 18px; /* Increase font size */
+    font-weight: bold; /* Make it bold */
+    color: black; /* Change color to white */
+}
+  
+
+
+.blurryImage {
+    width: 100%;
+}
+
+.centerText {
+    text-align: center;
+    font-size: 20px;
+}
