@@ -1,27 +1,36 @@
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import './NavigationBar.css';
-import logo from '../assets/logo.png'
+import { Flex, Box, Spacer, Link,Image } from "@chakra-ui/react";
+import { useTranslation } from "react-i18next";
+import logo from '../assets/logo.png';
+
 
 function NavigationBar() {
+  const { t, i18n } = useTranslation();
+
+  function changeLanguage(language) {
+    i18n.changeLanguage(language);
+  }
+
   return (
-    <Navbar className="navbar navbar-light">
-    <Nav variant="tabs" defaultActiveKey="/home">
-    <Navbar.Brand href="/">
-        <img src={logo} alt="Logo" className="logo" />
-        </Navbar.Brand>
-        <Nav.Item>
-          <Nav.Link href="/home">Home</Nav.Link>
-        </Nav.Item>
-        <Nav.Item>
-          <Nav.Link href="/bookSpot">Book Spot</Nav.Link>
-        </Nav.Item>
-        <Nav.Item>
-          <Nav.Link href="/history">History</Nav.Link>
-        </Nav.Item>
-      </Nav>
-  </Navbar>
-);
+    <Flex bg="#f7fff0" p={3} color="black">
+      <Image src={logo} alt="Logo" h={10} mr={4} /> 
+      <Box p="2">
+        <Link href="/home">{t('home')}</Link>
+      </Box>
+      <Spacer />
+      <Box p="2">
+        <Link href="/bookspace">{t('bookspace')}</Link>
+      </Box>
+      <Box p="2">
+        <Link href="/history">{t('history')}</Link>
+      </Box>
+      <Box p="2">
+        <Link onClick={() => changeLanguage('en')}>EN</Link>
+      </Box>
+      <Box p="2">
+        <Link onClick={() => changeLanguage('et')}>ET</Link>
+      </Box>
+    </Flex>
+  );
 }
 
 export default NavigationBar;

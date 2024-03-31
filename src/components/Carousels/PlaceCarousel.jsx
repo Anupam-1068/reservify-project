@@ -3,7 +3,6 @@ import Carousel from 'react-bootstrap/Carousel';
 import Image1 from '../../assets/Image1.jpg';
 import Image2 from '../../assets/Image2.jpg';
 import Image3 from '../../assets/Image3.jpg';
-import './PlaceCarousel.css'
 
 function PlaceCarousel() {
   return (

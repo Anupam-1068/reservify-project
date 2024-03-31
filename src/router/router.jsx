@@ -20,7 +20,7 @@ const router = createBrowserRouter([
       },
 
       {
-        path: '/bookSpot',
+        path: '/bookspace',
         element: <BookPage />,
       },
 

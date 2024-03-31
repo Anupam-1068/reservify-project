@@ -1,17 +1,8 @@
 /* App.css */
-
-/* Style for the main container */
-.container {
-    margin-top: 20px; /* Add margin to the top */
-    margin-bottom: 20px; /* Add margin to the bottom */
-    padding-top: 20px; /* Adjust as needed */
-    padding-bottom: 20px; /* Adjust as needed */
-  }
   
   /* Style for the footer */
   .footer {
     position: relative; /* Ensure footer stays at the bottom */
-    margin-top: 20px; /* Add margin to the top */
     margin-bottom: 20px; /* Add margin to the bottom */
     padding: 20px; /* Add padding to the footer */
     background-color: #ECE8CD;
