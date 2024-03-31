@@ -25,8 +25,8 @@
         <sql splitStatements="false">
 
             INSERT INTO users (username, password, email) VALUES
-            ('john_doe', 'hashed_password', 'john.doe@email.com'),
-            ('jane_smith', 'hashed_password', 'jane.smith@email.com');
+                                                              ('john_doe', 'hashed_password', 'john.doe@email.com'),
+                                                              ('jane_smith', 'hashed_password', 'jane.smith@email.com');
 
             INSERT INTO study_spaces (space_name, capacity, location, availability)
             VALUES

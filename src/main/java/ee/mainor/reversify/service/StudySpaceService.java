@@ -39,7 +39,7 @@ public class StudySpaceService {
     }
 
     public StudySpaceDto getStudySpaceById(Long id) {
-        StudySpaceModel studySpaceModel = studySpaceRepository.findStudySpaceModelById(id);
+        StudySpaceModel studySpaceModel = studySpaceRepository.findStudySpaceModelBySpaceId(id);
 
         return StudySpaceMapper.toDto(studySpaceModel);
     }
