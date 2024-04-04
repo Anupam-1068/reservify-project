@@ -15,6 +15,9 @@ public interface StudySpaceRepository extends CrudRepository<StudySpaceModel, Lo
             """)
         List<StudySpaceModel> getAllStudySpaces();
 
+    @Query("""
+            select * from study_spaces where study_spaces.space_id = :id
+            """)
         StudySpaceModel findStudySpaceModelBySpaceId(Long id);
 
         List<StudySpaceModel> findAllByLocation(String location);
