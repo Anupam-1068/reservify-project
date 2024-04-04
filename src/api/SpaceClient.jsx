@@ -8,7 +8,7 @@ const spaceClient = {
     createspace(space){
         return axios.post("api/studySpace", space)
     },
-    findStudySpaceModelBySpaceIdById(id) {
+    getStudySpaceById(id) {
         return axios.get(`api/studySpace/${id}`)
     },
 }

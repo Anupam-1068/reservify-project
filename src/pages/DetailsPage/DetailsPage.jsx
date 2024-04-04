@@ -1,43 +1,69 @@
-import React from 'react';
-import { useParams, useHistory } from 'react-router-dom';
-import Button from 'react-bootstrap/Button';
-import Image from 'react-bootstrap/Image';
-import { Container, Row, Col } from 'react-bootstrap';
+import React, { useState, useEffect } from 'react';
+import { Box, Heading, Text, Image, Button, Flex } from '@chakra-ui/react';
+import { useParams,NavLink } from 'react-router-dom';
+import { spaceClient } from '../../api/SpaceClient';
+import image1 from '../../assets/Image1.jpg'
+import image2 from '../../assets/Image2.jpg'
+import image3 from '../../assets/Image3.jpg'
+
+
+function getRandomImage() {
+  const images = [image1, image2, image3];
+  const randomIndex = Math.floor(Math.random() * images.length);
+  return images[randomIndex];
+}
 
 const DetailsPage = () => {
-  const history = useHistory();
-  const { id } = useParams(); // Assuming you have a parameter named 'id' in your route
+  const { spaceId } = useParams();
+  const [space, setSpace] = useState(null);
+  const randomImageUrl = getRandomImage();
 
-  // Sample data, replace with your actual data retrieval logic
-  const placeDetails = {
-    id: 1,
-    name: 'Sample Place',
-    image: 'path_to_image',
-    details: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-    timings: '9:00 AM - 6:00 PM', // Sample timings
-  };
+  useEffect(() => {
+    const fetchSpace = async () => {
+      try {
+        const response = await spaceClient.getStudySpaceById(spaceId);
+        if (response.data) {
+          setSpace(response.data);
+        } else {
+          console.error('No data found for space:', spaceId);
+        }
+      } catch (error) {
+        console.error('Error fetching space:', error);
+      }
+    };
 
-  const handleBookAppointment = () => {
-    // Redirect to booking appointment form page
-    history.push('/booking-appointment');
-  };
+    fetchSpace();
+  }, [spaceId]);
+
+  if (!space) {
+    return <div>Loading...</div>; // or a loading spinner
+  }
 
   return (
-    <Container>
-      <Row className="mt-5">
-        <Col md={6}>
-          <Image src={placeDetails.image} fluid />
-        </Col>
-        <Col md={6}>
-          <h2>{placeDetails.name}</h2>
-          <p>{placeDetails.details}</p>
-          <p>Timings: {placeDetails.timings}</p>
-          <Button onClick={handleBookAppointment} variant="primary">
-            Book Appointment
-          </Button>
-        </Col>
-      </Row>
-    </Container>
+    <Box p={8}>
+      <Heading as="h1" size="xl" mb={4}>
+        {space.spaceName}
+      </Heading>
+      <Box display="flex" flexDirection={['column', 'row']} alignItems="center" mb={4}>
+        <Image src={randomImageUrl} maxW={['100%', '50%']} mb={[4, 0]} />
+        <Box ml={[0, 8]} flex="1">
+          <Text fontSize="xl" mb={2}>
+            Capacity: {space.capacity}
+          </Text>
+          <Text fontSize="xl" mb={2}>
+            Location: {space.location}
+          </Text>
+          <Text fontSize="xl">
+            Availability: {space.availability}
+          </Text>
+        </Box>
+      </Box>
+      <Flex justify="flex-end">
+        <NavLink to="/form">
+          <Button colorScheme="blue">Book Appointment</Button>
+        </NavLink>
+      </Flex>
+      </Box>
   );
 };
 

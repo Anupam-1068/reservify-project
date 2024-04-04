@@ -11,6 +11,7 @@ import { ChakraProvider } from '@chakra-ui/react'
 
 
 function App() {
+
   return (
     <ChakraProvider>
       <I18nextProvider i18n={i18n}>

@@ -4,6 +4,8 @@ import HomePage from '../pages/HomePage.jsx';
 import App from "../App.jsx";
 import BookPage from '../pages/BookPage/BookPage.jsx';
 import HistoryPage from '../pages/HistoryPage.jsx';
+import DetailsPage from '../pages/DetailsPage/DetailsPage.jsx';
+import FormPage from '../pages/FormPage/FormPage.jsx';
 
 const router = createBrowserRouter([
   {
@@ -25,8 +27,16 @@ const router = createBrowserRouter([
       },
 
       {
+        path: '/studySpace/:spaceId',
+        element: <DetailsPage />,
+      },
+      {
         path: '/history',
         element: <HistoryPage />,
+      },
+      {
+        path: '/form',
+        element: <FormPage />,
       },
     ],
   },
