@@ -5,7 +5,7 @@
     position: relative; /* Ensure footer stays at the bottom */
     margin-bottom: 20px; /* Add margin to the bottom */
     padding: 20px; /* Add padding to the footer */
-    background-color: #ECE8CD;
+    background-color: #f7fff0;
     text-align: right; /* Center-align text */
   }
   

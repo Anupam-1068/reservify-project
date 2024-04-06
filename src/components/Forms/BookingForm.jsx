@@ -1,5 +1,6 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
+
 import {
   Box,
   Heading,
@@ -10,19 +11,29 @@ import {
   Textarea,
   Select,
   Button,
+  useToast
 } from '@chakra-ui/react';
+
 import { useNavigate } from 'react-router-dom';
-import ConfirmationAlert from '../Alerts/ConfirmationAlert';
 
 const BookingForm = ({ placeName }) => {
   const { register, handleSubmit, formState: { errors } } = useForm();
-  const [showConfirmation, setShowConfirmation] = useState(false);
   const navigate = useNavigate();
+  const toast = useToast();
+
 
   const onSubmit = (data) => {
-      setShowConfirmation(true);
+    toast({
+      title: 'Appointment booked successfully!',
+      status: 'success',
+      duration: 5000,
+      isClosable: true,
+    });
+    setTimeout(() => {
       navigate('/');
-    };
+    }, 1000);
+  };
+  
 
   return (
     <Box p={8} maxWidth="500px" mx="auto">
@@ -56,12 +67,10 @@ const BookingForm = ({ placeName }) => {
           <Textarea {...register('comment')} rows={4} />
         </FormControl>
         <Button type="submit" mt={8} colorScheme="blue">Book Now</Button>
-        {showConfirmation && (
-        <ConfirmationAlert />
-      )}
       </form>
     </Box>
   );
 };
 
 export default BookingForm;
+

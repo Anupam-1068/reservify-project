@@ -6,6 +6,7 @@ import BookPage from '../pages/BookPage/BookPage.jsx';
 import HistoryPage from '../pages/HistoryPage.jsx';
 import DetailsPage from '../pages/DetailsPage/DetailsPage.jsx';
 import FormPage from '../pages/FormPage/FormPage.jsx';
+import Dashboard from '../pages/DashboardPage/DashboardPage.jsx';
 
 const router = createBrowserRouter([
   {
@@ -37,6 +38,10 @@ const router = createBrowserRouter([
       {
         path: '/form',
         element: <FormPage />,
+      },
+      {
+        path: '/dashboard',
+        element: <Dashboard />,
       },
     ],
   },
