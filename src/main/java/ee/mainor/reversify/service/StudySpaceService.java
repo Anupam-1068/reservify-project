@@ -25,7 +25,6 @@ public class StudySpaceService {
             studySpaceDto.setSpaceName(studySpaceModel.getSpaceName());
             studySpaceDto.setCapacity(studySpaceModel.getCapacity());
             studySpaceDto.setLocation(studySpaceModel.getLocation());
-            studySpaceDto.setAvailability(studySpaceModel.getAvailability());
             // Map other properties as needed
             return studySpaceDto;
         }).toList();
@@ -48,26 +47,6 @@ public class StudySpaceService {
         List<StudySpaceModel> studySpaceModels = studySpaceRepository.findAllByLocation(location);
         return getStudySpaceDtos(studySpaceModels);
     }
-
-    public List<StudySpaceDto> getStudySpacesByAvailability(String day) {
-        List<StudySpaceModel> studySpaceModels = studySpaceRepository.findAllAvailableByDay(day);
-        List<StudySpaceModel> filteredStudySpaces = studySpaceModels.stream()
-                .filter(studySpaceModel -> isAvailableOnDay(studySpaceModel, day))
-                .collect(Collectors.toList());
-
-        return getStudySpaceDtos(filteredStudySpaces);
-    }
-
-    private boolean isAvailableOnDay(StudySpaceModel studySpaceModel, String day) {
-        JsonNode availabilityJson = studySpaceModel.getAvailability();
-
-        return availabilityJson != null &&
-                availabilityJson.has("day") &&
-                availabilityJson.get("day").asText().equalsIgnoreCase(day) &&
-                availabilityJson.has("status") &&
-                availabilityJson.get("status").asText().equalsIgnoreCase("available");
-    }
-
     @Transactional
     public StudySpaceDto createStudySpace(StudySpaceDto studySpaceDto) {
         StudySpaceModel studySpaceModel = StudySpaceMapper.toModel(studySpaceDto, null);
@@ -97,17 +76,6 @@ public class StudySpaceService {
 
     public List<StudySpaceDto> getStudySpacesByCapacityRange(int minCapacity, int maxCapacity) {
         List<StudySpaceModel> studySpaceModels = studySpaceRepository.findAllByCapacityRange(minCapacity, maxCapacity);
-        return getStudySpaceDtos(studySpaceModels);
-    }
-
-    public List<StudySpaceDto> getAvailableStudySpacesByLocationAndDay(String location, String day) {
-        List<StudySpaceModel> studySpaceModels = studySpaceRepository.findAllAvailableByDay(day);
-
-        // Filter study spaces by location
-        studySpaceModels = studySpaceModels.stream()
-                .filter(studySpaceModel -> studySpaceModel.getLocation().equalsIgnoreCase(location))
-                .collect(Collectors.toList());
-
         return getStudySpaceDtos(studySpaceModels);
     }
 

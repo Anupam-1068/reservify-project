@@ -16,7 +16,6 @@ public class StudySpaceMapper {
             studySpaceDto.setSpaceName(studySpaceModel.getSpaceName());
             studySpaceDto.setCapacity(studySpaceModel.getCapacity());
             studySpaceDto.setLocation(studySpaceModel.getLocation());
-            studySpaceDto.setAvailability(studySpaceModel.getAvailability());
             // Map other properties as needed
             return studySpaceDto;
         }
@@ -32,7 +31,6 @@ public class StudySpaceMapper {
             studySpaceDto.setSpaceName(studySpaceModel.getSpaceName());
             studySpaceDto.setCapacity(studySpaceModel.getCapacity());
             studySpaceDto.setLocation(studySpaceModel.getLocation());
-            studySpaceDto.setAvailability(studySpaceModel.getAvailability());
             // Map other properties as needed
             return studySpaceModel;
         }

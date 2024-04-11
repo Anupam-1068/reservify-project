@@ -18,7 +18,6 @@ public class StudySpaceModel {
 
         private int capacity;
         private String location;
-        private JsonNode availability;
 
         // Constructors, getters, and setters
 

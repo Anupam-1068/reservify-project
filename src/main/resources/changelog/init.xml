@@ -36,4 +36,10 @@
 
         </sql>
     </changeSet>
+    <changeSet author="anupam.krishna" id="alter-tables">
+        <sql splitStatements="false">
+        -- Drop the availability column from study_spaces table
+        ALTER TABLE study_spaces DROP COLUMN availability;
+        </sql>
+    </changeSet>
 </databaseChangeLog>

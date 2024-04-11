@@ -12,5 +12,4 @@ public class StudySpaceDto {
     private String spaceName;
     private int capacity;
     private String location;
-    private JsonNode availability;
 }

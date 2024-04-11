@@ -30,11 +30,6 @@ public class StudySpaceController {
         return studySpaceService.getStudySpacesByLocation(location);
     }
 
-    @GetMapping("availability")
-    public List<StudySpaceDto> getStudySpacesByAvailability(@RequestParam String day) {
-        return studySpaceService.getStudySpacesByAvailability(day);
-    }
-
     @GetMapping("capacity")
     public List<StudySpaceDto> getStudySpacesByCapacityRange(
             @RequestParam int minCapacity,
@@ -43,13 +38,7 @@ public class StudySpaceController {
         return studySpaceService.getStudySpacesByCapacityRange(minCapacity, maxCapacity);
     }
 
-     @GetMapping("locationAndDay")
-     public List<StudySpaceDto> getAvailableStudySpacesByLocationAndDay(
-             @RequestParam String location,
-             @RequestParam String day
-     ) {
-         return studySpaceService.getAvailableStudySpacesByLocationAndDay(location, day);
-     }
+
 
      @GetMapping("locationAndMinCapacity")
      public List<StudySpaceDto> getStudySpacesByLocationAndMinCapacity(
