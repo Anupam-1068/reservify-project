@@ -12,7 +12,7 @@ const BookPage = () => {
   const loadspaces = async () => {
     try {
       const response = await spaceClient.getAllStudySpaces();
-      console.log(response);
+      // console.log(response);
 
       // Check if response.data is an array before setting state
       if (Array.isArray(response.data)) {
@@ -31,7 +31,7 @@ const BookPage = () => {
 return (
   <Box className="card-container" p={4} bg="#ECE8CD" borderRadius="md">
     {spaces.map(space => (
-      <Box key={`studySpace-${space.id}`} className="mb-3">
+      <Box key={`studySpace-${space.spaceId}`} className="mb-3">
         <PlaceCard place={space} />
       </Box>
     ))}

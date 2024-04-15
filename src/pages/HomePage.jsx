@@ -10,7 +10,7 @@ const HomePage = () => {
   const loadBooks = async () => {
     try {
       const response = await spaceClient.getAllStudySpaces();
-
+      
       // Check if response.data is an array before setting state
       if (Array.isArray(response.data)) {
         setBooks(response.data);
@@ -43,7 +43,7 @@ const HomePage = () => {
 
       <Flex direction="column" align="center" w="100%">
         {books.slice(0, 2).map(book => (
-          <Box key={`studySpace-${book.id}`} my={3} w="50%">
+          <Box key={`studySpace-${book.spaceId}`} my={3} w="50%">
             <PlaceCard place={book} />
           </Box>
         ))}

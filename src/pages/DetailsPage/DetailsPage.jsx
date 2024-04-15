@@ -14,26 +14,33 @@ function getRandomImage() {
 }
 
 const DetailsPage = () => {
-  const { spaceId } = useParams();
+  const routerParams = useParams();
   const [space, setSpace] = useState(null);
+  const [name, setName] = useState("");
+  const [capacity, setCapacity] = useState("");
+  const [location, setLocation] = useState("");
   const randomImageUrl = getRandomImage();
 
-  useEffect(() => {
     const fetchSpace = async () => {
       try {
-        const response = await spaceClient.getStudySpaceById(spaceId);
+        const response = await spaceClient.getStudySpaceById(routerParams.spaceId);
+        console.log(response);
         if (response.data) {
           setSpace(response.data);
-        } else {
-          console.error('No data found for space:', spaceId);
+          setName(response.data.name);
+          setCapacity(response.data.capacity);
+          setLocation(response.data.location);
+            } else {
+          console.error('No data found for space:', routerParams.spaceId);
         }
       } catch (error) {
         console.error('Error fetching space:', error);
       }
     };
-
-    fetchSpace();
-  }, [spaceId]);
+  
+useEffect(() =>{
+  fetchSpace();
+}, [routerParams])
 
   if (!space) {
     return <div>Loading...</div>; // or a loading spinner
@@ -42,19 +49,16 @@ const DetailsPage = () => {
   return (
     <Box p={8}>
       <Heading as="h1" size="xl" mb={4}>
-        {space.spaceName}
+        {name}
       </Heading>
       <Box display="flex" flexDirection={['column', 'row']} alignItems="center" mb={4}>
         <Image src={randomImageUrl} maxW={['100%', '50%']} mb={[4, 0]} />
         <Box ml={[0, 8]} flex="1">
           <Text fontSize="xl" mb={2}>
-            Capacity: {space.capacity}
+            Capacity: {capacity}
           </Text>
           <Text fontSize="xl" mb={2}>
-            Location: {space.location}
-          </Text>
-          <Text fontSize="xl">
-            Availability: {space.availability}
+            Location: {location}
           </Text>
         </Box>
       </Box>

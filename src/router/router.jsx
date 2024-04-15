@@ -3,7 +3,6 @@ import { createBrowserRouter, Outlet } from 'react-router-dom'; // Import create
 import HomePage from '../pages/HomePage.jsx';
 import App from "../App.jsx";
 import BookPage from '../pages/BookPage/BookPage.jsx';
-import HistoryPage from '../pages/HistoryPage.jsx';
 import DetailsPage from '../pages/DetailsPage/DetailsPage.jsx';
 import FormPage from '../pages/FormPage/FormPage.jsx';
 import Dashboard from '../pages/DashboardPage/DashboardPage.jsx';
@@ -30,10 +29,6 @@ const router = createBrowserRouter([
       {
         path: '/studySpace/:spaceId',
         element: <DetailsPage />,
-      },
-      {
-        path: '/history',
-        element: <HistoryPage />,
       },
       {
         path: '/form',
