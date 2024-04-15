@@ -9,7 +9,6 @@ const spaceClient = {
         return axios.post("/api/studySpace", space)
     },
     getStudySpaceById(spaceId) {
-        console.log(`/api/studySpace/${spaceId}`);
         return axios.get(`/api/studySpace/${spaceId}`)
     },
 }
