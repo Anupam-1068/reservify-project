@@ -1,6 +1,7 @@
 import { Flex, Box, Spacer, Link,Image } from "@chakra-ui/react";
 // import { useTranslation } from "react-i18next";
 import logo from '../assets/logo.png';
+import LanguageSwitcher from "../LanguageSwitcher";
 
 
 function NavigationBar() {
@@ -20,13 +21,9 @@ function NavigationBar() {
       <Box p="2">
         <Link href="/resevify/bookspace">Bookspace</Link>
       </Box>
-
-      {/* <Box p="2">
-        <Link onClick={() => changeLanguage('en')}>EN</Link>
-      </Box>
       <Box p="2">
-        <Link onClick={() => changeLanguage('et')}>ET</Link>
-      </Box> */}
+        <LanguageSwitcher/>
+      </Box>
     </Flex>
   );
 }
