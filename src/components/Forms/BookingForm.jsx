@@ -34,7 +34,7 @@ const BookingForm = ({ placeName }) => {
       isClosable: true,
     });
     setTimeout(() => {
-      navigate('/');
+      navigate('/resevify');
     }, 1000);
   };
   

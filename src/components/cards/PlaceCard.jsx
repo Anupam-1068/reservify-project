@@ -38,7 +38,7 @@ function PlaceCard({ place }) {
     </CardBody>
 
     <CardFooter>
-    <NavLink className="nav-link" to={`/studySpace/${place.spaceId}`}>Click to view</NavLink>
+    <NavLink className="nav-link" to={`/resevify/studySpace/${place.spaceId}`}>Click to view</NavLink>
     </CardFooter>
   </Stack>
 </Card>

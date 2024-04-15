@@ -13,29 +13,29 @@ const router = createBrowserRouter([
     element: <App />,
     children: [
       {
-        path: '/',
+        path: '/resevify',
         element: <HomePage />,  //<Outlet/> for http://localhost:5173/
       },
       {
-        path: '/home',
+        path: '/resevify/home',
         element: <HomePage />,
       },
 
       {
-        path: '/bookspace',
+        path: '/resevify/bookspace',
         element: <BookPage />,
       },
 
       {
-        path: '/studySpace/:spaceId',
+        path: '/resevify/studySpace/:spaceId',
         element: <DetailsPage />,
       },
       {
-        path: '/form',
+        path: '/resevify/form',
         element: <FormPage />,
       },
       {
-        path: '/dashboard',
+        path: '/resevify/dashboard',
         element: <Dashboard />,
       },
     ],

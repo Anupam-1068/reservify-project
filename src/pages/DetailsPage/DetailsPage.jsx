@@ -63,7 +63,7 @@ useEffect(() =>{
         </Box>
       </Box>
       <Flex justify="flex-end">
-        <NavLink to="/form">
+        <NavLink to="/resevify/form">
           <Button colorScheme="blue">Book Appointment</Button>
         </NavLink>
       </Flex>
