@@ -12,6 +12,7 @@ const BookPage = () => {
   const loadspaces = async () => {
     try {
       const response = await spaceClient.getAllStudySpaces();
+      console.log(response);
 
       // Check if response.data is an array before setting state
       if (Array.isArray(response.data)) {

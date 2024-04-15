@@ -8,8 +8,9 @@ const spaceClient = {
     createspace(space){
         return axios.post("api/studySpace", space)
     },
-    getStudySpaceById(id) {
-        return axios.get(`api/studySpace/${id}`)
+    getStudySpaceById(spaceId) {
+        console.log(`api/studySpace/${spaceId}`);
+        return axios.get(`api/studySpace/${spaceId}`)
     },
 }
 

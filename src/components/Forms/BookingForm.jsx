@@ -23,6 +23,10 @@ const BookingForm = ({ placeName }) => {
 
 
   const onSubmit = (data) => {
+     // Send confirmation email logic goes here
+    // You can use a library like nodemailer to send emails
+    // Example: nodemailer.sendMail(data.email, 'Appointment Confirmation', `Appointment details: ${JSON.stringify(data)}`);
+
     toast({
       title: 'Appointment booked successfully!',
       status: 'success',
@@ -44,6 +48,11 @@ const BookingForm = ({ placeName }) => {
           <Input type="text" {...register('name', { required: 'Name is required' })} />
           <FormErrorMessage>{errors.name && errors.name.message}</FormErrorMessage>
         </FormControl>
+        <FormControl id="email" isInvalid={errors.email} mt={4}>
+          <FormLabel>Email</FormLabel>
+          <Input type="email" {...register('email', { required: 'Email is required' })} />
+          <FormErrorMessage>{errors.email && errors.email.message}</FormErrorMessage>
+        </FormControl>
         <FormControl id="place">
           <FormLabel>Place</FormLabel>
           <Input type="text" value={placeName} isReadOnly />
@@ -56,9 +65,9 @@ const BookingForm = ({ placeName }) => {
         <FormControl id="time" mt={4} isInvalid={errors.time}>
           <FormLabel>Time Slot</FormLabel>
           <Select placeholder="Select Time Slot" {...register('time', { required: 'Time Slot is required' })}>
-            <option value="morning">Morning</option>
-            <option value="afternoon">Afternoon</option>
-            <option value="evening">Evening</option>
+          <option value="1-2 pm">1-2 pm</option>
+          <option value="3-4 pm">3-4 pm</option>
+          <option value="5-6 pm">5-6 pm</option>
           </Select>
           <FormErrorMessage>{errors.time && errors.time.message}</FormErrorMessage>
         </FormControl>
