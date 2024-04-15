@@ -16,11 +16,7 @@ const router = createBrowserRouter([
         path: '/resevify',
         element: <HomePage />,  //<Outlet/> for http://localhost:5173/
       },
-      {
-        path: '/resevify/home',
-        element: <HomePage />,
-      },
-
+      
       {
         path: '/resevify/bookspace',
         element: <BookPage />,
