@@ -3,9 +3,11 @@ import { Flex, Box, Text, Image, Button } from '@chakra-ui/react';
 import HomeImage from '../assets/Image1.jpg';
 import PlaceCard from '../components/cards/PlaceCard';
 import { spaceClient } from '../api/SpaceClient';
+import { useTranslation } from 'react-i18next';
 
 const HomePage = () => {
   const [books, setBooks] = useState([]);
+  const {t} = useTranslation();
 
   const loadBooks = async () => {
     try {
@@ -35,11 +37,11 @@ const HomePage = () => {
       </Box>
       
       <Box textAlign="center" my={4}>
-        <Text fontSize="xl">Empowering your study journey — Reservify, where space meets efficiency!</Text>
+        <Text fontSize="xl">{t('empoweringStudyJourney')}</Text>
       </Box>
 
       <Box textAlign="center" my={4}>
-        <Text fontSize="2xl" fontWeight="bold">Top Picks</Text>
+        <Text fontSize="2xl" fontWeight="bold">{t('topPicks')}</Text>
       </Box>
 
       <Flex direction="column" align="center" w="100%">
@@ -53,12 +55,12 @@ const HomePage = () => {
 
       <Box textAlign="center" my={4}>
         <Text fontSize="lg">
-          Reservify revolutionizes the way you secure study spaces! This brings a seamless and user-friendly experience to the process of reserving study rooms and collaborative areas within educational institutions in Tallinn. Whether you're a student, researcher, or professional, Reservify ensures you have instant access to the perfect study environment, enhancing productivity and fostering collaboration.
+            {t('reservifyRevolution')}
         </Text>
       </Box>
 
       <Box textAlign="center" my={4}>
-        <Button colorScheme="blue" size="lg" as="a" href="/resevify/bookspace">Book space</Button>
+        <Button colorScheme="blue" size="lg" as="a" href="/resevify/bookspace">{t('bookSpot')}</Button>
       </Box>
     </Flex>
     </Box>

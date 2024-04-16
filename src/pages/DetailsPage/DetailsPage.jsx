@@ -5,6 +5,7 @@ import { spaceClient } from '../../api/SpaceClient';
 import image1 from '../../assets/Image1.jpg'
 import image2 from '../../assets/Image2.jpg'
 import image3 from '../../assets/Image3.jpg'
+import { useTranslation } from 'react-i18next';
 
 
 function getRandomImage() {
@@ -20,6 +21,7 @@ const DetailsPage = () => {
   const [capacity, setCapacity] = useState("");
   const [location, setLocation] = useState("");
   const randomImageUrl = getRandomImage();
+  const {t} = useTranslation();
 
     const fetchSpace = async () => {
       try {
@@ -55,16 +57,16 @@ useEffect(() =>{
         <Image src={randomImageUrl} maxW={['100%', '50%']} mb={[4, 0]} />
         <Box ml={[0, 8]} flex="1">
         <Text fontSize="xl" mb={2}>
-            Location: {location}
+            {t('location')} {location}
           </Text>
           <Text fontSize="xl" mb={2}>
-            Max Number of People: {capacity}
+            {t('maxNumberOfPeople')} {capacity}
           </Text>
         </Box>
       </Box>
       <Flex justify="flex-end">
         <NavLink to="/resevify/form">
-          <Button colorScheme="blue">Book Appointment</Button>
+          <Button colorScheme="blue">{t('bookAppointment')}</Button>
         </NavLink>
       </Flex>
       </Box>
