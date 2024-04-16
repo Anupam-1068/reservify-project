@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Box, Heading, Text, Image, Button, Flex } from '@chakra-ui/react';
-import { useParams,NavLink } from 'react-router-dom';
+import { useParams,NavLink, useNavigate } from 'react-router-dom';
 import { spaceClient } from '../../api/SpaceClient';
 import image1 from '../../assets/Image1.jpg'
 import image2 from '../../assets/Image2.jpg'
@@ -22,6 +22,7 @@ const DetailsPage = () => {
   const [location, setLocation] = useState("");
   const randomImageUrl = getRandomImage();
   const {t} = useTranslation();
+  const navigate = useNavigate();
 
     const fetchSpace = async () => {
       try {
@@ -48,6 +49,14 @@ useEffect(() =>{
     return <div>Loading...</div>; // or a loading spinner
   }
 
+
+  const handleButtonClick = () => {
+    // Navigate to FormPage and pass spaceName as state
+    navigate(
+    `/resevify/form/${spaceName}`
+    , { state: { spaceName: spaceName } });
+  };
+
   return (
     <Box p={8}>
       <Heading as="h1" size="xl" mb={4}>
@@ -65,9 +74,9 @@ useEffect(() =>{
         </Box>
       </Box>
       <Flex justify="flex-end">
-        <NavLink to="/resevify/form">
-          <Button colorScheme="blue">{t('bookAppointment')}</Button>
-        </NavLink>
+        {/* <NavLink to="/resevify/form"> */}
+          <Button colorScheme="blue" onClick={handleButtonClick} >{t('bookAppointment')}</Button>
+        {/* </NavLink> */}
       </Flex>
       </Box>
   );

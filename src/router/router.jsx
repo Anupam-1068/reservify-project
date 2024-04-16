@@ -27,7 +27,7 @@ const router = createBrowserRouter([
         element: <DetailsPage />,
       },
       {
-        path: '/resevify/form',
+        path: '/resevify/form/:spaceName',
         element: <FormPage />,
       },
       {

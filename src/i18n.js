@@ -29,8 +29,7 @@ const resources = {
       emailIsRequired: "Email is required",
       dateIsRequired: "Date is required",
       timeSlotIsRequired: "Time Slot is required",
-
-
+      appointmentBookedSuccessfully: "Appointment booked Sucessfully"
     },
   },
   et: {
@@ -59,8 +58,7 @@ const resources = {
     emailIsRequired: "E-post on nõutud",
     dateIsRequired: "Kuupäev on nõutud",
     timeSlotIsRequired: "Ajavahemik on nõutud",
-
-  
+    appointmentBookedSuccessfully : "Aeg broneeritud edukalt",
   },
 
   },

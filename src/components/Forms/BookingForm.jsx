@@ -17,7 +17,7 @@ import {
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
-const BookingForm = ({ placeName }) => {
+const BookingForm = ({ spaceName }) => {
   const { register, handleSubmit, formState: { errors } } = useForm();
   const navigate = useNavigate();
   const toast = useToast();
@@ -55,7 +55,7 @@ const BookingForm = ({ placeName }) => {
         </FormControl>
         <FormControl id="place">
           <FormLabel>{t('place')}</FormLabel>
-          <Input type="text" value={placeName} isReadOnly />
+          <Input type="text" value={spaceName} isReadOnly />
         </FormControl>
         <FormControl id="date" mt={4} isInvalid={errors.date}>
           <FormLabel>{t('date')}</FormLabel>
