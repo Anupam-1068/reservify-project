@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
-
+import { spaceClient } from '../../api/SpaceClient';
 import {
   Box,
   Heading,
@@ -23,11 +23,21 @@ const BookingForm = ({ spaceName }) => {
   const toast = useToast();
   const { t } = useTranslation(); // Accessing the t function from useTranslation hook
 
-  const onSubmit = (data) => {
-    // Send confirmation email logic goes here
-    // You can use a library like nodemailer to send emails
-    // Example: nodemailer.sendMail(data.email, 'Appointment Confirmation', `Appointment details: ${JSON.stringify(data)}`);
-
+  const onSubmit = async(data) => {
+      try {
+        const emailContent = `Appointment details:\n\nName: ${data.name}\nEmail: ${data.email}\nDate: ${data.date}\nTime Slot: ${data.time}\nComment: ${data.comment}`;
+        console.log(emailContent);
+        // Send email
+        await spaceClient.sendEmailRequest({
+          recipent: data.email,
+          subject: 'Appointment Confirmation',
+          msgBody: emailContent,
+          // from: 'anupamagarwalzzz@gmail.com',
+          // to: data.recipient,
+          // subject: data.subject,
+          // text: data.msgBody,
+      
+        });
     toast({
       title: t('appointmentBookedSuccessfully'),
       status: 'success',
@@ -37,6 +47,11 @@ const BookingForm = ({ spaceName }) => {
     setTimeout(() => {
       navigate('/resevify');
     }, 1000);
+  }catch (error) {
+      console.error('Error sending email:', error);
+      // Handle error, display error toast, etc.
+    }
+  
   };
 
   return (

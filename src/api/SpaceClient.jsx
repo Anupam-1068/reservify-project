@@ -11,6 +11,9 @@ const spaceClient = {
     getStudySpaceById(spaceId) {
         return axios.get(`/api/studySpace/${spaceId}`)
     },
+    sendEmailRequest(email) {
+        return axios.post("/api/sendMail",email);
+    },
 }
 
 export {spaceClient}
