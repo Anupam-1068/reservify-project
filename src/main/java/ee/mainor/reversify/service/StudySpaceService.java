@@ -1,6 +1,5 @@
 package ee.mainor.reversify.service;
 
-import com.fasterxml.jackson.databind.JsonNode;
 import ee.mainor.reversify.dto.StudySpaceDto;
 import ee.mainor.reversify.mapper.StudySpaceMapper;
 import ee.mainor.reversify.model.StudySpaceModel;
@@ -39,7 +38,6 @@ public class StudySpaceService {
 
     public StudySpaceDto getStudySpaceById(Long id) {
         StudySpaceModel studySpaceModel = studySpaceRepository.findStudySpaceModelBySpaceId(id);
-
         return StudySpaceMapper.toDto(studySpaceModel);
     }
 
@@ -88,4 +86,5 @@ public class StudySpaceService {
 
         return getStudySpaceDtos(studySpaceModels);
     }
+
 }

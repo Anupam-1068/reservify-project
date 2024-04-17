@@ -1,6 +1,5 @@
 package ee.mainor.reversify.dto;
 
-import com.fasterxml.jackson.databind.JsonNode;
 import lombok.Data;
 import lombok.experimental.Accessors;
 

@@ -32,5 +32,7 @@ public interface StudySpaceRepository extends CrudRepository<StudySpaceModel, Lo
              select * from study_spaces where location = :location and capacity >= :minCapacity
              """)
      List<StudySpaceModel> findAllByLocationAndMinCapacity(String location, int minCapacity);
+
+
     }
 
