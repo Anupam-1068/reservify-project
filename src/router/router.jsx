@@ -7,6 +7,7 @@ import DetailsPage from '../pages/DetailsPage/DetailsPage.jsx';
 import FormPage from '../pages/FormPage/FormPage.jsx';
 import Dashboard from '../pages/DashboardPage/DashboardPage.jsx';
 import ProfilePage from '../pages/ProfilePage/ProfilePage.jsx';
+import ContactUsPage from '../pages/ContactUspage.jsx';
 
 const router = createBrowserRouter([
   {
@@ -38,6 +39,10 @@ const router = createBrowserRouter([
       {
         path: '/resevify/profile',
         element: <ProfilePage />,
+      },
+      {
+        path: '/resevify/contact',
+        element: <ContactUsPage />,
       },
     ],
   },

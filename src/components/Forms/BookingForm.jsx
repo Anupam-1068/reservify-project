@@ -40,16 +40,16 @@ const formattedOneWeekFromToday = format(oneWeekFromToday, 'yyyy-MM-dd');
       try {
         const emailContent = `
         
-        Hello ${data.name},
+Hello ${data.name},
 
-        You have successfully booked your spot at ${data.place} for ${data.time}. 
+You have successfully booked your spot at ${data.place} for ${data.time}.
         
-        We're excited to welcome you and ensure you have a wonderful experience. Should you have any questions or need assistance, feel free to reach out to us.
+We're excited to welcome you and ensure you have a wonderful experience. Should you have any questions or need assistance, feel free to reach out to us.
         
-        Thank you for choosing us, and we look forward to seeing you soon!
+Thank you for choosing us, and we look forward to seeing you soon!
         
-        Best regards,
-        Rervify Support Team`;
+Best regards,
+Reservify Support Team`;
                 console.log(emailContent);
         // Send email
         await spaceClient.sendEmailRequest({

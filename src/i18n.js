@@ -33,7 +33,16 @@ const resources = {
       profile:"Profile",
       save:"Save",
       bio:"Bio",
-      profileUpdatedSuccessfully: "Profile Updated"
+      profileUpdatedSuccessfully: "Profile Updated",
+      contactUs: 'Contact Us',
+      email: 'Email',
+      emailIsRequired: 'Email is required',
+      message: 'Message',
+      messageIsRequired: 'Message is required',
+      send: 'Send',
+      messageSentSuccessfully: 'Message sent successfully',
+      contactUsSubject: 'Message from Contact Us Form',
+      
     },
   },
   et: {
@@ -66,7 +75,15 @@ const resources = {
     profile:"Profiil",
     save:"salvestada",
     bio: "Bio",
-    profileUpdatedSuccessfully:"Profiil uuendatud"
+    profileUpdatedSuccessfully:"Profiil uuendatud",
+    contactUs: 'Võta meiega ühendust',
+    email: 'E-post',
+    emailIsRequired: 'E-post on nõutud',
+    message: 'Sõnum',
+    messageIsRequired: 'Sõnum on nõutud',
+    send: 'Saada',
+    messageSentSuccessfully: 'Sõnum saadetud edukalt',
+    contactUsSubject: 'Sõnum Kontaktivormist',
 
 
   },
