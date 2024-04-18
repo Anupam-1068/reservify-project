@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { spaceClient } from '../../api/SpaceClient';
+import { addDays, format, startOfToday } from 'date-fns'; // Importing addDays and format functions
+
+
 import {
   Box,
   Heading,
@@ -11,7 +14,7 @@ import {
   Textarea,
   Select,
   Button,
-  useToast
+  useToast,
 } from '@chakra-ui/react';
 
 import { useNavigate } from 'react-router-dom';
@@ -23,20 +26,40 @@ const BookingForm = ({ spaceName }) => {
   const toast = useToast();
   const { t } = useTranslation(); // Accessing the t function from useTranslation hook
 
+  const today = startOfToday(); // Get the current date
+
+// Calculate the date one week from today
+const oneWeekFromToday = addDays(today, 7);
+
+// Format the dates as strings
+const formattedToday = format(today, 'yyyy-MM-dd');
+const formattedOneWeekFromToday = format(oneWeekFromToday, 'yyyy-MM-dd');
+
+
   const onSubmit = async(data) => {
       try {
-        const emailContent = `Appointment details:\n\nName: ${data.name}\nEmail: ${data.email}\nDate: ${data.date}\nTime Slot: ${data.time}\nComment: ${data.comment}`;
-        console.log(emailContent);
+        const emailContent = `
+        
+        Hello ${data.name},
+
+        You have successfully booked your spot at ${data.place} for ${data.time}. 
+        
+        We're excited to welcome you and ensure you have a wonderful experience. Should you have any questions or need assistance, feel free to reach out to us.
+        
+        Thank you for choosing us, and we look forward to seeing you soon!
+        
+        Best regards,
+        Rervify Support Team`;
+                console.log(emailContent);
         // Send email
         await spaceClient.sendEmailRequest({
-          recipent: data.email,
+          recipient: data.email,
           subject: 'Appointment Confirmation',
           msgBody: emailContent,
           // from: 'anupamagarwalzzz@gmail.com',
           // to: data.recipient,
           // subject: data.subject,
           // text: data.msgBody,
-      
         });
     toast({
       title: t('appointmentBookedSuccessfully'),
@@ -74,7 +97,7 @@ const BookingForm = ({ spaceName }) => {
         </FormControl>
         <FormControl id="date" mt={4} isInvalid={errors.date}>
           <FormLabel>{t('date')}</FormLabel>
-          <Input type="date" {...register('date', { required: t('dateIsRequired') })} />
+            <Input type="date" {...register('date', { required: t('dateIsRequired') })} min={formattedToday} max={formattedOneWeekFromToday} />
           <FormErrorMessage>{errors.date && errors.date.message}</FormErrorMessage>
         </FormControl>
         <FormControl id="time" mt={4} isInvalid={errors.time}>

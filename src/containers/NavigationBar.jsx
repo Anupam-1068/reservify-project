@@ -21,6 +21,9 @@ function NavigationBar() {
         <Link href="/resevify/bookspace">{t('bookSpot')}</Link>
       </Box>
       <Box p="2">
+        <Link href="/resevify/profile">{t('profile')}</Link>
+      </Box>
+      <Box p="2">
         <LanguageSwitcher/>
       </Box>
     </Flex>
