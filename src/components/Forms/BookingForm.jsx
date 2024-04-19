@@ -68,7 +68,7 @@ Reservify Support Team`;
       isClosable: true,
     });
     setTimeout(() => {
-      navigate('/resevify');
+      navigate('/reservify');
     }, 1000);
   }catch (error) {
       console.error('Error sending email:', error);

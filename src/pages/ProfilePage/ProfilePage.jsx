@@ -38,7 +38,7 @@ const ProfilePage = () => {
       duration: 5000,
       isClosable: true,
     });
-    navigate('/resevify')
+    navigate('/reservify')
   };
 
   return (

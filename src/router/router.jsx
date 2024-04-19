@@ -15,33 +15,33 @@ const router = createBrowserRouter([
     element: <App />,
     children: [
       {
-        path: '/resevify',
+        path: '/reservify',
         element: <HomePage />,  //<Outlet/> for http://localhost:5173/
       },
       
       {
-        path: '/resevify/bookspace',
+        path: '/reservify/bookspace',
         element: <BookPage />,
       },
 
       {
-        path: '/resevify/studySpace/:spaceId',
+        path: '/reservify/studySpace/:spaceId',
         element: <DetailsPage />,
       },
       {
-        path: '/resevify/form/:spaceName',
+        path: '/reservify/form/:spaceName',
         element: <FormPage />,
       },
       {
-        path: '/resevify/dashboard',
+        path: '/reservify/dashboard',
         element: <Dashboard />,
       },
       {
-        path: '/resevify/profile',
+        path: '/reservify/profile',
         element: <ProfilePage />,
       },
       {
-        path: '/resevify/contact',
+        path: '/reservify/contact',
         element: <ContactUsPage />,
       },
     ],

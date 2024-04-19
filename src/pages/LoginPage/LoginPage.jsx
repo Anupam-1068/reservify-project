@@ -59,7 +59,7 @@ const LoginPage = () => {
         isClosable: true,
       });
       setTimeout(() => {
-        navigate('/Allergan.github.io/home');
+        navigate('/reservify');
       }, 1000);
     } catch (error) {
       setError('Invalid email or password'); // Display error message

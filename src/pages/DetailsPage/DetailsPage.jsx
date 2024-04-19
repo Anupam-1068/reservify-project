@@ -53,7 +53,7 @@ useEffect(() =>{
   const handleButtonClick = () => {
     // Navigate to FormPage and pass spaceName as state
     navigate(
-    `/resevify/form/${spaceName}`
+    `/reservify/form/${spaceName}`
     , { state: { spaceName: spaceName } });
   };
 

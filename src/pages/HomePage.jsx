@@ -60,7 +60,7 @@ const HomePage = () => {
       </Box>
 
       <Box textAlign="center" my={4}>
-        <Button colorScheme="blue" size="lg" as="a" href="/resevify/bookspace">{t('bookSpot')}</Button>
+        <Button colorScheme="blue" size="lg" as="a" href="/reservify/bookspace">{t('bookSpot')}</Button>
       </Box>
     </Flex>
     </Box>

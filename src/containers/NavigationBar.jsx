@@ -14,17 +14,17 @@ function NavigationBar() {
     <Flex bg="#f7fff0" p={3} color="black">
       <Image src={logo} alt="Logo" h={10} mr={4} /> 
       <Box p="2">
-        <Link href="/resevify">{t('home')}</Link>
+        <Link href="/reservify">{t('home')}</Link>
       </Box>
       <Spacer />
       <Box p="2">
-        <Link href="/resevify/bookspace">{t('bookSpot')}</Link>
+        <Link href="/reservify/bookspace">{t('bookSpot')}</Link>
       </Box>
       {/* <Box p="2">
-        <Link href="/resevify/profile">{t('profile')}</Link>
+        <Link href="/reservify/profile">{t('profile')}</Link>
       </Box> */}
       <Box p="2">
-        <Link href="/resevify/contact">{t('contactUs')}</Link>
+        <Link href="/reservify/contact">{t('contactUs')}</Link>
       </Box>
       <Box p="2">
         <LanguageSwitcher/>
