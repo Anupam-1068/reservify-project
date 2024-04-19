@@ -39,3 +39,11 @@ dependencies {
 tasks.named('test') {
 	useJUnitPlatform()
 }
+
+//jar {
+//	manifest {
+//		attributes(
+//				'Main-Class': 'ee.mainor.reversify.ReservifyApplication' // Replace com.example.YourMainClass with the fully qualified name of your main class
+//		)
+//	}
+//}
