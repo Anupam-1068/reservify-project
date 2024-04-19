@@ -4,10 +4,12 @@ import HomeImage from '../assets/Image1.jpg';
 import PlaceCard from '../components/cards/PlaceCard';
 import { spaceClient } from '../api/SpaceClient';
 import { useTranslation } from 'react-i18next';
+import { useNavigate } from 'react-router-dom';
 
 const HomePage = () => {
   const [books, setBooks] = useState([]);
   const {t} = useTranslation();
+  const navigate = useNavigate();
 
   const loadBooks = async () => {
     try {
@@ -60,7 +62,7 @@ const HomePage = () => {
       </Box>
 
       <Box textAlign="center" my={4}>
-        <Button colorScheme="blue" size="lg" as="a" href="/reservify/bookspace">{t('bookSpot')}</Button>
+        <Button colorScheme="blue" size="lg" as="a" onClick={() => navigate("/reservify/bookspace")}>{t('bookSpot')}</Button>
       </Box>
     </Flex>
     </Box>
