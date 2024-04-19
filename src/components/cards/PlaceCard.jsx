@@ -26,6 +26,7 @@ function PlaceCard({ place }) {
     objectFit='cover'
     maxW={{ base: '100%', sm: '200px' }}
     src={randomImageUrl}
+    alt="Random"
   />
 
   <Stack>
