@@ -14,7 +14,7 @@ function NavigationBar() {
     <Flex bg="#f7fff0" p={3} color="black">
       <Image src={logo} alt="Logo" h={10} mr={4} /> 
       <Box p="2">
-        <Link href="/resevify/">{t('home')}</Link>
+        <Link href="/resevify">{t('home')}</Link>
       </Box>
       <Spacer />
       <Box p="2">
