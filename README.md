@@ -27,7 +27,7 @@ The frontend of Reservify is built using React.js and Chakra UI. It provides a r
 To run Reservify locally, follow these steps:
 1. Clone the repository: `git clone https://github.com/Anupam-1068/reservify-project.git`
 2. Install dependencies: `cd reservify && yarn install`
-3. run `yarn dev`
+3. run `yarn run dev`
 4. Open your browser and navigate to `http://localhost:3000` to access the Reservify application.
 
 ## Current Issue: Heroku Setup for Spring Boot
