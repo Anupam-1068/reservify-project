@@ -23,13 +23,6 @@ The backend of Reservify is built using Java Spring Boot,Postgres and Liquibase.
 ## Frontend
 The frontend of Reservify is built using React.js and Chakra UI. It provides a responsive and intuitive user interface for browsing study spaces, making bookings, and contacting platform administrator support, feedback, or general inquiries.
 
-## Getting Started
-To run Reservify locally, follow these steps:
-1. Clone the repository: `git clone https://github.com/Anupam-1068/reservify-project.git`
-2. Install dependencies: `cd reservify && yarn install`
-3. run `yarn run dev`
-4. Open your browser and navigate to `http://localhost:3000` to access the Reservify application.
-
 ## Current Issue: Heroku Setup for Spring Boot
 
 One of the primary challenges Reservify is facing right now is setting up Heroku for the Spring Boot backend. Despite efforts to configure and deploy the application, compatibility issues and configuration errors have hindered the deployment process. Resolving these issues is critical for deploying Reservify on Heroku and making the application accessible to users. The development team is actively working on troubleshooting and resolving the deployment issues to ensure a smooth and successful deployment on Heroku.
@@ -43,6 +36,11 @@ If you have any suggestions or expertise in Heroku deployment for Spring Boot ap
 
 ## Contributing
 Contributions to Reservify are welcome! If you find any issues or have ideas for improvements, please open an issue or submit a pull request.
+
+## Repositories
+- Frontend: [https://github.com/Anupam-1068/reservify](https://github.com/Anupam-1068/reservify)
+- Backend: [https://github.com/Anupam-1068/Reservify-Backend](https://github.com/Anupam-1068/Reservify-Backend)
+
 
 
 
